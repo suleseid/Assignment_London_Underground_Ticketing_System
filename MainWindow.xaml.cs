@@ -19,19 +19,19 @@ namespace Assignment_London_Underground_Ticketing_System
     {
         // Replace "WillsList" with your Custom List name in 2 places.
         // 1. Replace here
-        // Example YourList<Ride> Riders
-        public WillsList<Rider> Riders;
+        private SulesList<Rider> Riders;
+        //public WillsList<Rider> Riders;
 
-        int numberOfRiders = 10; // Changes this to something higher than 100 to check your list is working
+        int numberOfRiders = 250; // Changes this to something higher than 100 to check your list is working
 
         public MainWindow()
         {
             InitializeComponent();
             InitializeRiders();
             cmbSearchStation.ItemsSource = Enum.GetValues(typeof(Station));
+           
 
 
-            lvRiders.ItemsSource = Riders;
         } // MainWindow
 
         private void OnSearchStation(object sender, RoutedEventArgs e)
@@ -40,12 +40,50 @@ namespace Assignment_London_Underground_Ticketing_System
 
             // Enter code here to show all riders who started there ride from the selected station
 
+            // Create a new list to store the matching riders
+            SulesList<Rider> matchingRiders = new SulesList<Rider>();
+
+            // Loop through the riders list
+            for (int i = 0; i < Riders.Count; i++)
+            {
+                // Get the current rider
+                Rider rider = Riders[i];
+                // Check if the rider's start station matches the search station
+                if (rider.StartStation == searchStation)
+                {
+                    // Add the rider to the matching list
+                    matchingRiders.Add(rider);
+                }
+            }
+
+            // Display the matching riders in the list box
+            lvRiders.ItemsSource = matchingRiders.ToArray();
+
             // lvRiders.ItemsSource = YourReturnedResults;
         } // OnSearchStation
 
         private void OnShowActive(object sender, RoutedEventArgs e)
         {
             // Enter code here to display all riders currently riding the underground
+
+            // Create a new list to store the active riders
+            SulesList<Rider> activeRiders = new SulesList<Rider>();
+
+            // Loop through the riders list
+            for (int i = 0; i < Riders.Count; i++)
+            {
+                // Get the current rider
+                Rider rider = Riders[i];
+                // Check if the rider is active
+                if (rider.IsActive)
+                {
+                    // Add the rider to the active list
+                    activeRiders.Add(rider);
+                }
+            }
+
+            // Display the active riders in the list box
+            lvRiders.ItemsSource = activeRiders.ToArray();
 
             // lvRiders.ItemsSource = YourReturnedResults;
         } // OnShowActive
@@ -58,8 +96,8 @@ namespace Assignment_London_Underground_Ticketing_System
         private void InitializeRiders()
         {
             // 2. And here
-            // Ex Riders = new YourList<Rider>();
-            Riders = new WillsList<Rider>();
+            Riders = new SulesList<Rider>();
+            //Riders = new WillsList<Rider>();
             Random rnd = new Random();
             HashSet<int> usedNumbers = new HashSet<int>();
 

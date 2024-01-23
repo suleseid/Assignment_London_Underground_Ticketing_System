@@ -11,7 +11,7 @@ namespace Assignment_London_Underground_Ticketing_System
         public int UniqueNumber { get; set; }
         public Station StationOn { get; set; }
         public Station StationOff { get; set; }
-
+        public int StartStation { get; set; }
 
         public Rider(int uniqueNumber, Station on, Station off)
         {
@@ -24,7 +24,7 @@ namespace Assignment_London_Underground_Ticketing_System
         {
             get => (StationOff == 0) ? true : false;
         }
-
+        
     } // class
 
 } // namespace
