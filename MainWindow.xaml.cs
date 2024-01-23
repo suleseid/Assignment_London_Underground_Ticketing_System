@@ -29,8 +29,8 @@ namespace Assignment_London_Underground_Ticketing_System
             InitializeComponent();
             InitializeRiders();
             cmbSearchStation.ItemsSource = Enum.GetValues(typeof(Station));
-           
 
+            //lvRiders.ItemsSource = Riders;
 
         } // MainWindow
 
