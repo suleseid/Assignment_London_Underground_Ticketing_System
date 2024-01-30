@@ -18,14 +18,15 @@ namespace Assignment_London_Underground_Ticketing_System
         {
             get { return count; }
         }
-
-        public int Capacity // The maximum size of the internal array
+        // The maximum size of the internal array
+        public int Capacity 
         {
             get { return capacity; }
         }
 
         // Indexer
-        public T this[int index] // Allows accessing the list elements by index
+        // Allows accessing the list elements by index
+        public T this[int index] 
         {
             get
             {
@@ -50,7 +51,8 @@ namespace Assignment_London_Underground_Ticketing_System
         }
 
         // Constructor
-        public SulesList(int initialCapacity = 4) // Creates a new list with an optional initial capacity
+        // Creates a new list with an optional initial capacity
+        public SulesList(int initialCapacity = 4) 
         {
             // Check if the initial capacity is positive
             if (initialCapacity <= 0)
@@ -64,7 +66,8 @@ namespace Assignment_London_Underground_Ticketing_System
         }
 
         // Methods
-        public void Add(T item) // Adds a new item to the end of the list
+        // Adds a new item to the end of the list
+        public void Add(T item) 
         {
             // Check if the list is full
             if (count == capacity)
@@ -86,8 +89,8 @@ namespace Assignment_London_Underground_Ticketing_System
             // Increment the count
             count++;
         }
-
-        public void RemoveAt(int index) // Removes the item at the given index from the list
+        // Removes the item at the given index from the list
+        public void RemoveAt(int index) 
         {
             // Check if the index is valid
             if (index < 0 || index >= count)
@@ -102,14 +105,14 @@ namespace Assignment_London_Underground_Ticketing_System
             // Decrement the count
             count--;
         }
-
-        public void Clear() // Removes all the items from the list
+        // Removes all the items from the list
+        public void Clear() 
         {
             // Reset the count
             count = 0;
         }
-
-        public bool Contains(T item) // Returns true if the list contains the given item, false otherwise
+        // Returns true if the list contains the given item, false otherwise
+        public bool Contains(T item) 
         {
             // Loop through the list elements
             for (int i = 0; i < count; i++)
@@ -124,8 +127,8 @@ namespace Assignment_London_Underground_Ticketing_System
             // Return false
             return false;
         }
-
-        public int IndexOf(T item) // Returns the index of the first occurrence of the given item in the list, or -1 if not found
+        // Returns the index of the first occurrence of the given item in the list, or -1 if not found
+        public int IndexOf(T item) 
         {
             // Loop through the list elements
             for (int i = 0; i < count; i++)
@@ -140,8 +143,8 @@ namespace Assignment_London_Underground_Ticketing_System
             // Return -1
             return -1;
         }
-
-        public void Insert(int index, T item) // Inserts a new item at the given index in the list
+        // Inserts a new item at the given index in the list.
+        public void Insert(int index, T item) 
         {
             // Check if the index is valid
             if (index < 0 || index > count)
@@ -173,8 +176,8 @@ namespace Assignment_London_Underground_Ticketing_System
             // Increment the count
             count++;
         }
-
-        public void Remove(T item) // Removes the first occurrence of the given item from the list
+        // Removes the first occurrence of the given item from the list.
+        public void Remove(T item) 
         {
             // Find the index of the item
             int index = IndexOf(item);
@@ -185,8 +188,8 @@ namespace Assignment_London_Underground_Ticketing_System
                 RemoveAt(index);
             }
         }
-
-        public T[] ToArray() // Returns a new array containing the elements of the list
+        // Returns a new array containing the elements of the list
+        public T[] ToArray() 
         {
             // Create a new array with the same size as the count
             T[] array = new T[count];
