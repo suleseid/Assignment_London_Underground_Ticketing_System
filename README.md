@@ -16,7 +16,7 @@ To show how much better you are then this Will guy, you will also add Linear Sea
 - Fork the repoisotry ( add your last name to the end of the project)
 - Add your name to the top of the project in comments
     ```csharp
-        // William Cram
+        //Suleman Seid
         // Assignment: Lond Underground Communt
         // 01/10/2024
     ```
@@ -26,11 +26,11 @@ To show how much better you are then this Will guy, you will also add Linear Sea
     ```csharp
         // Top of MainWindow
         public WillsList<Rider> Riders; // Replace this
-        public YourList<Rider> Riders; // With your list
+        public SulemanList<Rider> Riders; // With your list
 
         // Bottom of MainWindow
         Riders = new WillsList<Rider>(); // Replace this
-        Riders = new YourList<Rider>(); // With this
+        Riders = new SulemanList<Rider>(); // With this
     ```
 
 If done correctly it should work like normal, but now you can have more than 100 riders.
@@ -76,7 +76,7 @@ If done correctly it should work like normal, but now you can have more than 100
         - Inherit from Ienumerable so that you can attach your CustomList to an ItemsSource ( or use with a foreach ). Code is below.
 
     ```csharp
-        public class YourList<T> : IEnumerable<T>
+        public class SulemanList<T> : IEnumerable<T>
         {
 
         // ... Code for your Custom List Methods
